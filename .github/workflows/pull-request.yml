@@ -21,7 +21,7 @@ jobs:
       run: |
         cat <<EOF > requirements.txt
         eql
-        python-yaml
+        pyyaml
         pyflakes
         flake8
         pep8-naming
