@@ -1,8 +1,8 @@
 name: Merge Rule Deploy
 
 on:
-  push:
-    branches: [ "main", "7.*", "8.*" ]
+  pull_request:
+    branches: [ "*" ]
 
 jobs:
   build:
@@ -13,24 +13,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
 
-    - name: Set up Python 3.8
-      uses: actions/setup-python@v2
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v5
       with:
-        python-version: 3.8
+        python-version: 3.12
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        #pip install -r requirements.txt
+        pip cache purge
+        pip install .[dev]
 
     - name: Python Lint
       run: |
-        python -m flake8 tests detection_rules --ignore D203 --max-line-length 120
+        python -m flake8 tests detection_rules --ignore D203,N815 --max-line-length 120
 
     - name: Deploy Rules
       run: |
-        python update_rules.py
-
-
+        python .github/workflows/update_rules.py
