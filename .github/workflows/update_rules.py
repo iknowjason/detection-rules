@@ -1,5 +1,5 @@
-#Elastic License 2.0
-#URL: https://www.elastic.co/licensing/elastic-license
+# SPDX-License-Identifier: MIT
+# Copyright (c) 2025, Your Org 
 import json
 import requests
 import toml
