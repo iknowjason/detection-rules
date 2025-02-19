@@ -25,7 +25,7 @@ license = "Elastic License v2"
 name = "Whoami Process Activity with Tines"
 note = """## Triage and analysis
 
-### Investigating Whoami Process Activity
+### Investigating Whoami Process Activity with Tines
 
 After successfully compromising an environment, attackers may try to gain situational awareness to plan their next steps. This can happen by running commands to enumerate network resources, users, connections, files, and installed security software.
 
