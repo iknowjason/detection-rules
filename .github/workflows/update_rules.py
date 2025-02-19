@@ -1,3 +1,5 @@
+#Elastic License 2.0
+#URL: https://www.elastic.co/licensing/elastic-license
 import json
 import requests
 import toml
