@@ -39,7 +39,3 @@ jobs:
     - name: Unit tests
       run: |
         python -m detection_rules test
-
-    - name: Clean up Git configuration
-      run: |
-        git config --local --unset-all http.https://github.com/.extraheader || true
