@@ -22,6 +22,7 @@ jobs:
         cat <<EOF > requirements.txt
         eql
         pyyaml
+        click
         pyflakes
         flake8
         pep8-naming
